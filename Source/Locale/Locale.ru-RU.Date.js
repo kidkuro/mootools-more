@@ -89,10 +89,4 @@ Locale.define('ru-RU', 'Date', {
 
 });
 
-//<1.2compat>
-
-Locale.define('ru-RU-unicode').inherit('ru-RU', 'Date');
-
-//</1.2compat>
-
 })();

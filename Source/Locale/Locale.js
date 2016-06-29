@@ -49,10 +49,6 @@ var Locale = this.Locale = {
 
 		if (set) locale.define(set, key, value);
 
-		/*<1.2compat>*/
-		if (set == 'cascade') return Locale.inherit(name, key);
-		/*</1.2compat>*/
-
 		if (!current) current = locale;
 
 		return locale;
@@ -65,10 +61,6 @@ var Locale = this.Locale = {
 			current = locale;
 
 			this.fireEvent('change', locale);
-
-			/*<1.2compat>*/
-			this.fireEvent('langChange', locale.name);
-			/*</1.2compat>*/
 		}
 
 		return this;
@@ -164,25 +156,5 @@ Locale.Set = new Class({
 	}
 
 });
-
-/*<1.2compat>*/
-var lang = MooTools.lang = {};
-
-Object.append(lang, Locale, {
-	setLanguage: Locale.use,
-	getCurrentLanguage: function(){
-		var current = Locale.getCurrent();
-		return (current) ? current.name : null;
-	},
-	set: function(){
-		Locale.define.apply(this, arguments);
-		return this;
-	},
-	get: function(set, key, args){
-		if (key) set += '.' + key;
-		return Locale.get(set, args);
-	}
-});
-/*</1.2compat>*/
 
 })();

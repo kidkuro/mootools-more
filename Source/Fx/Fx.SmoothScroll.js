@@ -21,7 +21,7 @@ provides: [Fx.SmoothScroll]
 ...
 */
 
-/*<1.2compat>*/var SmoothScroll = /*</1.2compat>*/Fx.SmoothScroll = new Class({
+Fx.SmoothScroll = new Class({
 
 	Extends: Fx.Scroll,
 

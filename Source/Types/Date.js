@@ -403,10 +403,6 @@ Date.extend({
 		return this;
 	},
 
-	//<1.2compat>
-	parsePatterns: parsePatterns,
-	//</1.2compat>
-
 	defineParser: function(pattern){
 		parsePatterns.push((pattern.re && pattern.handler) ? pattern : build(pattern));
 		return this;

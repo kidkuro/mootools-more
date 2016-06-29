@@ -363,7 +363,7 @@ Form.Validator.addAllThese([
 			if (typeOf(props.length) != 'null') return (element.get('value').length == props.length || element.get('value').length == 0);
 			else return true;
 		}
-	}],	
+	}],
 
 	['minLength', {
 		errorMsg: function(element, props){
@@ -525,11 +525,3 @@ Element.implement({
 	}
 
 });
-
-
-//<1.2compat>
-//legacy
-var FormValidator = Form.Validator;
-//</1.2compat>
-
-

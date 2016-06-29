@@ -123,8 +123,4 @@ provides: [Element.Pin]
 
 	});
 
-//<1.2compat>
-Element.alias('togglepin', 'togglePin');
-//</1.2compat>
-
 })();

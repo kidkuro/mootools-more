@@ -33,11 +33,7 @@ var Sortables = new Class({
 		clone: false,
 		revert: false,
 		handle: false,
-		dragOptions: {}/*<1.2compat>*/,
-		snap: 4,
-		constrain: false,
-		preventDefault: false
-		/*</1.2compat>*/
+		dragOptions: {}
 	},
 
 	initialize: function(lists, options){
@@ -158,11 +154,6 @@ var Sortables = new Class({
 		this.clone = this.getClone(event, element);
 
 		this.drag = new Drag.Move(this.clone, Object.merge({
-			/*<1.2compat>*/
-			preventDefault: this.options.preventDefault,
-			snap: this.options.snap,
-			container: this.options.constrain && this.element.getParent(),
-			/*</1.2compat>*/
 			droppables: this.getDroppables()
 		}, this.options.dragOptions)).addEvents({
 			onSnap: function(){

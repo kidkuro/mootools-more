@@ -114,11 +114,6 @@ Element.implement({
 	},
 
 	getComputedSize: function(options){
-		//<1.2compat>
-		//legacy support for my stupid spelling error
-		if (options && options.plains) options.planes = options.plains;
-		//</1.2compat>
-
 		options = Object.merge({
 			styles: ['padding','border'],
 			planes: {

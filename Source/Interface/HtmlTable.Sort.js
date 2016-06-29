@@ -337,10 +337,6 @@ HtmlTable.Parsers = {
 
 };
 
-//<1.2compat>
-HtmlTable.Parsers = new Hash(HtmlTable.Parsers);
-//</1.2compat>
-
 HtmlTable.defineParsers = function(parsers){
 	HtmlTable.Parsers = Object.append(HtmlTable.Parsers, parsers);
 	for (var parser in parsers){

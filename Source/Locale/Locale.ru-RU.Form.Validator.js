@@ -38,9 +38,3 @@ Locale.define('ru-RU', 'FormValidator', {
 	warningPrefix: 'Внимание: '
 
 });
-
-//<1.2compat>
-
-Locale.define('ru-RU-unicode').inherit('ru-RU', 'FormValidator');
-
-//</1.2compat>

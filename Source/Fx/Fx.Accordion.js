@@ -204,37 +204,3 @@ Fx.Accordion = new Class({
 	}
 
 });
-
-/*<1.2compat>*/
-/*
-	Compatibility with 1.2.0
-*/
-var Accordion = new Class({
-
-	Extends: Fx.Accordion,
-
-	initialize: function(){
-		this.parent.apply(this, arguments);
-		var params = Array.link(arguments, {'container': Type.isElement});
-		this.container = params.container;
-	},
-
-	addSection: function(toggler, element, pos){
-		toggler = document.id(toggler);
-		element = document.id(element);
-
-		var test = this.togglers.contains(toggler);
-		var len = this.togglers.length;
-		if (len && (!test || pos)){
-			pos = pos != null ? pos : len - 1;
-			toggler.inject(this.togglers[pos], 'before');
-			element.inject(toggler, 'after');
-		} else if (this.container && !test){
-			toggler.inject(this.container);
-			element.inject(this.container);
-		}
-		return this.parent.apply(this, arguments);
-	}
-
-});
-/*</1.2compat>*/
